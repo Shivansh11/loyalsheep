@@ -98,15 +98,16 @@
     </style> 
     <script>
       function started(){
-        setInterval(function(){
-          if(document.getElementById("props").src == "realistic.png")
+       var anim =  setInterval(swap, 3000);
+      } 
+      function swap(){
+         if(document.getElementById("props").src == "realistic.png")
             document.getElementById("props").src = "detective.png";
           else if(document.getElementById("props").src == "detective.png")
             document.getElementById("props").src = "scifi.png";
           else if(document.getElementById("props").src == "scifi.png")
             document.getElementById("props").src = "realistic.png";
-          }, 3000);
-      }  
+      }
     </script>
   </head>
   <body onLoad="started()">
