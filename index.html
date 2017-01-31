@@ -98,10 +98,9 @@
     </style> 
     <script>
       function started(){
-       var anim =  setInterval(swap, 3000);
+       var anim =  setInterval(swap, 1500);
       } 
       function swap(){
-        alert("Executed");
          if(document.getElementById("props").src.indexOf("realistic.png") != -1 )
             document.getElementById("props").src = "detective.png";
           else if(document.getElementById("props").src.indexOf("detective.png") != -1)
