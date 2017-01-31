@@ -95,9 +95,21 @@
         width:auto;
         margin: auto; 
       }
-    </style>  
+    </style> 
+    <script>
+      function started(){
+        setInterval(function(){
+          if(document.getElementById("props").src == "realistic.png")
+            document.getElementById("props").src = "detective.png";
+          else if(document.getElementById("props").src == "detective.png")
+            document.getElementById("props").src = "scifi.png";
+          else if(document.getElementById("props").src == "scifi.png")
+            document.getElementById("props").src = "realistic.png";
+          }, 3000);
+      }  
+    </script>
   </head>
-  <body>
+  <body onLoad="started()">
     <div id="bar">
       <img id="ls" src="ls.png">
     </div>
