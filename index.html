@@ -99,7 +99,7 @@
       }
     </style> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-      $(document).ready(function() {
+      $(document).ready(function() { alert(executed");
         var movementStrength = 25;
         var height = movementStrength / $(window).height();
         var width = movementStrength / $(window).width();
@@ -109,8 +109,8 @@
           var newvalueX = width * pageX * -1 - 25;
           var newvalueY = height * pageY * -1 - 50;
           $("body").css("background-position", newvalueX+"px     "+newvalueY+"px");
-});
-});
+        });
+      });
       function started(){
        var anim =  setInterval(swap, 1500);
        var anim1 =  setInterval(native, 500); 
