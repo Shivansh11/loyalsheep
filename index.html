@@ -7,7 +7,10 @@
     <meta name="keywords" content="loyalsheep, loyal sheep, games, video games, videogames, app, apps, natives, android, new, generation">
     <meta name="description" content="Welcome to the official website of loyalsheep, creator of Natives for Android. Loyalsheep aims to develop revolutionary games, first of their genre!">
     <style>
-      body {
+      #contain{
+        background-size: cover;
+      }
+      #back{
         background: url(background.jpg) -25px -50px;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -103,12 +106,12 @@
         var movementStrength = 25;
         var height = movementStrength / $(window).height();
         var width = movementStrength / $(window).width();
-        $("body").mousemove(function(e){
+        $("#back").mousemove(function(e){
           var pageX = e.pageX - ($(window).width() / 2);
           var pageY = e.pageY - ($(window).height() / 2);
           var newvalueX = width * pageX * -1 - 25;
           var newvalueY = height * pageY * -1 - 50;
-          $("body").css("background-position", newvalueX+"px     "+newvalueY+"px");
+          $("#back").css("background-position", newvalueX+"px     "+newvalueY+"px");
         });
       });
       </script>
@@ -134,6 +137,10 @@
     </script>
   </head>
   <body onLoad="started()">
+    <div id="contain">
+      <div id="back">
+      </div>  
+    </div>
     <div id="bar">
       <img id="logo" src="logo.png">
     </div>
