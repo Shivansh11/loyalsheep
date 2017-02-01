@@ -7,20 +7,11 @@
     <meta name="keywords" content="loyalsheep, loyal sheep, games, video games, videogames, app, apps, natives, android, new, generation">
     <meta name="description" content="Welcome to the official website of loyalsheep, creator of Natives for Android. Loyalsheep aims to develop revolutionary games, first of their genre!">
     <style>
-      body{ 
-        margin:0px;
-        padding:0px
-      }
-      #contain{
-        width:100%;
-        height:100%;
-        background-size: cover;
-      }
-      #back{
-        background: url(background.jpg) -25px -50px;
+      body{
+        background-image: url(background.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: calc(100% + 50px);
+        background-size: cover;
         background-color: #000000;
         margin:0px;
         padding:0px;
@@ -106,21 +97,6 @@
         margin: auto; 
       }
     </style> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script>
-      $(document).ready(function() {
-        var movementStrength = 25;
-        var height = movementStrength / $(window).height();
-        var width = movementStrength / $(window).width();
-        $("#back").mousemove(function(e){
-          var pageX = e.pageX - ($(window).width() / 2);
-          var pageY = e.pageY - ($(window).height() / 2);
-          var newvalueX = width * pageX * -1 - 25;
-          var newvalueY = height * pageY * -1 - 50;
-          $("#back").css("background-position", newvalueX+"px     "+newvalueY+"px");
-        });
-      });
-      </script>
       <script>
       function started(){
        var anim =  setInterval(swap, 1500);
@@ -143,10 +119,6 @@
     </script>
   </head>
   <body onLoad="started()">
-    <div id="contain">
-      <div id="back">
-      </div>  
-    </div>
     <div id="bar">
       <img id="logo" src="logo.png">
     </div>
