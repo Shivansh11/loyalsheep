@@ -101,6 +101,7 @@
     <script>
       function started(){
        var anim =  setInterval(swap, 1500);
+       var anim1 =  setInterval(native, 1000); 
       } 
       function swap(){
          if(document.getElementById("props").src.indexOf("realistic.png") != -1 )
@@ -110,6 +111,12 @@
           else if(document.getElementById("props").src.indexOf("scifi") != -1)
             document.getElementById("props").src = "realistic.png";
       }
+      function native(){
+         if(document.getElementById("natives").src.indexOf("nat.png") != -1 )
+            document.getElementById("natives").src = "nat1.png";
+          else if(document.getElementById("natives").src.indexOf("nat1.png") != -1)
+            document.getElementById("natives").src = "nat.png";
+      }
     </script>
   </head>
   <body onLoad="started()">
@@ -117,7 +124,7 @@
       <img id="logo" src="logo.png">
     </div>
     <div id="main">
-      <img id="natives" src="natives.png">
+      <img id="natives" src="nat.png">
       <img id="props" src="realistic.png">
       <img id="android" src="android.png">
     </div> 
