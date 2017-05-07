@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head> 
+    <title>loyalsheep - Home</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="www.loyalsheep.com/favicon.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, maximum-scale=1"/>
+    <meta name="keywords" content="loyalsheep, loyal sheep, games, video games, videogames, app, apps, natives, android, new, generation">
+    <meta name="description" content="Welcome to the official website of loyalsheep, creator of Natives for Android. Loyalsheep aims to develop revolutionary games, first of their kind!">
+    <link rel="stylesheet" type="text/css" href="sheets/main.css">
+	<script type="text/javascript">
+		i=0;
+		function tog(){
+			if(i % 2 == 0){
+				document.getElementById("games").style.display = "block";
+				document.getElementById("blogs").style.display = "block";
+				document.getElementById("contact").style.display = "block";
+				i++;
+			}
+			else{
+				document.getElementById("games").style.display = "";
+				document.getElementById("blogs").style.display = "";
+				document.getElementById("contact").style.display = "";
+				i++;
+			}
+		}
+	</script>
+	</head>
+	<body>
+		<div id="bar">
+			<a href="#"><img id="logo" src="images/logo.png"></a>
+		</div>
+			<img id="menuicon" src="images/menuicon.png" onclick="tog()">
+			<ul id="menu">
+				<li id="games">
+					<a href="games/one.html">Games</a>
+				</li>
+				<li id="blogs">
+					<a href="blogs/one.html">Blogs</a>
+				</li>
+				<li id="contact">
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+		<div id="banner">
+			<img id="gamepic" src="images/gamepic.jpg">
+			<hr>
+			<img id="blogpic" src="images/blogpic.jpg">
+		</div>
+		<hr>
+		<h1 id="headNat">Natives</h1>
+		<div class="txt">
+			<p class="desc">
+				The game makes use of Google Street View Panoramas to hack real people in places. It's not realistic, it's real! Download on <a href="https://play.google.com/store/apps/details?id=com.loyalsheep.Natives" target="_blank">Google Play Store</a> to believe.
+			</p>
+		</div>
+		<iframe id="natives" src="https://www.youtube.com/embed/tbz7n68osSM" frameborder="0" allowfullscreen>
+		</iframe>
+		<a href="https://play.google.com/store/apps/details?id=com.loyalsheep.Natives" target="_blank">
+			<img id="playstore" src="images/playstore.png">
+		</a>
+		<hr>
+		<h1 id="upcoming">Upcoming Game</h1>
+		<img id="infinity" src="images/infinity.jpg">
+		<hr>
+		<div class="footer">
+			<a href="https://www.facebook.com/loyalsheep/" target="_blank"><img src="images/facebook.png"></a>
+			<a href="https://twitter.com/LoyalsheepGames" target="_blank"><img src="images/twitter.png"></a>
+		</div>
+	</body>
+	</html>
