@@ -11,27 +11,33 @@
     <link rel="stylesheet" type="text/css" href="sheets/contact.css">
 	<script type="text/javascript">
 		i=0;
-		function tog(){
-			if(i % 2 == 0){
-				document.getElementById("games").style.display = "block";
-				document.getElementById("blogs").style.display = "block";
-				document.getElementById("contact").style.display = "block";
-				i++;
-			}
-			else{
-				document.getElementById("games").style.display = "";
-				document.getElementById("blogs").style.display = "";
-				document.getElementById("contact").style.display = "";
-				i++;
-			}
+		function decide(e){
+			if(e.target.id != "games" && e.target.id != "blogs" && e.target.id != "contact" && e.target.id != "menuicon")
+				hide();
+			else if(e.target.id == "menuicon" && document.getElementById("games").style.display != "block")
+				show();
+			else
+				hide();
+		}
+		function show(){
+			document.getElementById("games").style.display = "block";
+			document.getElementById("blogs").style.display = "block";
+			document.getElementById("contact").style.display = "block";
+			i++;			
+		}
+		function hide(){
+			document.getElementById("games").style.display = "";
+			document.getElementById("blogs").style.display = "";
+			document.getElementById("contact").style.display = "";
+			i++;
 		}
 	</script>
 	</head>
-	<body>
+	<body onclick="decide()">
 		<div id="bar">
 			<a href="index.html"><img id="logo" src="images/logo.png"></a>
 		</div>
-			<img id="menuicon" src="images/menuicon.png" onclick="tog()">
+			<img id="menuicon" src="images/menuicon.png">
 			<ul id="menu">
 				<li id="games">
 					<a href="games/one.html">Games</a>
