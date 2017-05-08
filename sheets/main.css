@@ -18,7 +18,7 @@ ul{
 	padding: 0px;
 }
 #menu{
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	list-style: none;
 	right: 10px;
@@ -58,7 +58,7 @@ li:active{
 }
 #menuicon{
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 12px;
 	width: 50px;
 	right: 20px;
