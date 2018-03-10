@@ -98,35 +98,7 @@ $(document).ready(function(){
 //FOR Blog Page
 var blog = document.getElementsByClassName("menuitem")[1];
 blog.onclick = function () {
-    $("#aboutPage").hide();
-    $(".updates").hide();
-    $(".banner").hide();
-    $("#gamePage").hide(); 
-
-    $("#blogPage").show();
-    document.getElementById("blogPage").innerHTML = "";
-    $("footer").addClass("getdown");   //******************REMOVE THIS*******************/
-
-    if($('#ham').hasClass('open')){
-        $('#ham').toggleClass('open');
-        $('.menu').toggleClass('open');
-    }
-    var i, j;
-
-    var request = new XMLHttpRequest();
-    request.open("GET", "http://loyalsheep.com/Pages/blogPosts.json");
-    request.onload = function () {
-        var blogData = JSON.parse(request.responseText);
-        for (i = 0; i < blogData.length; i++){
-            document.getElementById("blogPage").innerHTML += "<h1>" + blogData[i].heading + "</h1>";
-            document.getElementById("blogPage").innerHTML += "<h6>" + blogData[i].dated + "</h6>";
-            for(j = 0; j < blogData[i].content.length; j++)
-                document.getElementById("blogPage").innerHTML += "<p>" + blogData[i].content[j] + "</p>";
-            
-        $("footer").removeClass("getdown");
-        }
-    }
-    request.send();
+    blogClick();
 }
 
 //END of Blog Page
@@ -161,7 +133,11 @@ blog.onclick = function () {
 
 //For Updates
     $(".update:nth-child(1)").click(function () {
-        window.open("https://www.youtube.com/watch?v=TwQ_LQzWwOc&list=LLie230PyK4Ts6JaVHsAfFYw&index=3");
+        window.open("https://www.youtube.com/watch?v=TwQ_LQzWwOc");
+    });
+
+    $(".update:nth-child(2)").click(function () {
+        blogClick();
     });
 
     $(".update:nth-child(3)").click(function () {
@@ -178,5 +154,37 @@ blog.onclick = function () {
     });
 //End of Updates
 });
+
+function blogClick () {
+    $("#aboutPage").hide();
+    $(".updates").hide();
+    $(".banner").hide();
+    $("#gamePage").hide(); 
+
+    $("#blogPage").show();
+    document.getElementById("blogPage").innerHTML = "";
+    $("footer").addClass("getdown");   //******************REMOVE THIS*******************/
+
+    if($('#ham').hasClass('open')){
+        $('#ham').toggleClass('open');
+        $('.menu').toggleClass('open');
+    }
+    var i, j;
+
+    var request = new XMLHttpRequest();
+    request.open("GET", "http://loyalsheep.com/Pages/blogPosts.json");
+    request.onload = function () {
+        var blogData = JSON.parse(request.responseText);
+        for (i = 0; i < blogData.length; i++){
+            document.getElementById("blogPage").innerHTML += "<h1>" + blogData[i].heading + "</h1>";
+            document.getElementById("blogPage").innerHTML += "<h6>" + blogData[i].dated + "</h6>";
+            for(j = 0; j < blogData[i].content.length; j++)
+                document.getElementById("blogPage").innerHTML += "<p>" + blogData[i].content[j] + "</p>";
+            
+        $("footer").removeClass("getdown");
+        }
+    }
+    request.send();
+}
 
 
