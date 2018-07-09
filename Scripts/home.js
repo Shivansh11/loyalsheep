@@ -26,19 +26,23 @@ $(document).ready(function(){
         document.getElementsByClassName("gameBanner")[y].style.width = "0px";
         document.getElementsByClassName("gameBanner")[x].style.width = "100%";
         y = x;
-        if (y === 0){
+        /*if (y === 0){
             document.getElementsByClassName("googlePlay")[0].style.opacity = "0";
             document.getElementsByClassName("googlePlay")[0].style.display = "none";
-        
-        }
-        else{
+        }*/
+        //else{
             document.getElementsByClassName("googlePlay")[0].style.display = "block"; 
             document.getElementsByClassName("googlePlay")[0].style.opacity = "1";
-        }
+        //}
+        //for GooglePlay link of Natives
+        if (y === 0) 
+        document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.FastestDialler";
+    
         //for GooglePlay link of Natives
         if (y === 1) 
             document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.Natives";
-        //for GooglePlay link of Airavat
+       
+            //for GooglePlay link of Airavat
         if (y === 2) 
             document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.Airavat";
 
