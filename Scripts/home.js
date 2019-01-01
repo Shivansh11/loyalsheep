@@ -36,16 +36,19 @@ $(document).ready(function(){
         //}
         //for GooglePlay link of Natives
         if (y === 0) 
-        document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.FastestDialler";
+        document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.TinyTweenies";
     
         //for GooglePlay link of Natives
         if (y === 1) 
-            document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.Natives";
+            document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.FastestDialler";
        
             //for GooglePlay link of Airavat
         if (y === 2) 
-            document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.Airavat";
+            document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.Natives";
 
+        if (y === 3) 
+        document.getElementsByClassName("googlePlay")[0].href = "https://play.google.com/store/apps/details?id=com.loyalsheep.Airavat";
+        
         x = (x + 1) % bannerImagesCounter;
     }
 
@@ -89,10 +92,18 @@ $(document).ready(function(){
         }
 
         $(".game:nth-child(1)").click(function () { //Natives
-            window.open("https://play.google.com/store/apps/details?id=com.loyalsheep.Natives");
+            window.open("https://play.google.com/store/apps/details?id=com.loyalsheep.TinyTweenies");
         });
 
         $(".game:nth-child(2)").click(function () { //Airavat
+            window.open("https://play.google.com/store/apps/details?id=com.loyalsheep.FastestDialler");
+        });
+
+        $(".game:nth-child(3)").click(function () { //Natives
+            window.open("https://play.google.com/store/apps/details?id=com.loyalsheep.Natives");
+        });
+
+        $(".game:nth-child(4)").click(function () { //Airavat
             window.open("https://play.google.com/store/apps/details?id=com.loyalsheep.Airavat");
         });
     }

@@ -94,8 +94,12 @@ a, a:link, a:visited {
 	transition: all 0.75s;
 }
 
-#FD {
+#TT {
 	width: 100%;
+	background-image: url('../Images/TT.jpg');
+}
+
+#FD {
 	background-image: url('../Images/FD.jpg');
 }
 
@@ -406,6 +410,10 @@ footer {
 		border-bottom: 0px;
 	}
 
+	#TT {
+		background-image: url('../Images/TTMob.jpg');
+	}
+
 	#FD {
 		background-image: url('../Images/FDMob.jpg');
 	}
@@ -477,7 +485,6 @@ footer {
 		flex-wrap: wrap;
 		align-content: center;
 		justify-content: center;
-		margin-top: 0%;
 	}
 
 	.game {
@@ -486,7 +493,6 @@ footer {
 		float: left;
 		margin: 20px 20px;
 		text-align: center;
-		margin-top: 40%;
 	 }
 
 	#aboutPage {
