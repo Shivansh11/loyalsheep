@@ -1,3 +1,1 @@
-# natives
-
-An innovative, point-and-tap investigation game.
+This is loyalsheep, creator of damned games like Natives, and author of goddamn blogs.
