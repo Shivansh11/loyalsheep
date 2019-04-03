@@ -134,10 +134,19 @@ nav{
 
 .promo-item {
     height: 200px;
+    max-width: 300px;
     line-height: 180px;
     text-align: center;
     background-size: 100%; 
     padding: 0;
+    margin: 2px;
+}
+
+@media (max-width:767px) {
+    .promo-item {
+        
+    margin: 2px auto;
+    }  
 }
 
 .promo-item:hover {
@@ -475,4 +484,13 @@ img::-moz-selection {
 
 .ourGames {
     margin-bottom: 25px;
+}
+
+@media (min-width:768px) {
+    .ourGames {
+        width: 1216px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+    
 }
