@@ -11,9 +11,3 @@ $(function() {
 		$nav.toggleClass('navScrolled', $(this).scrollTop() > $nav.height());
 	});
 });
-
-$(function() {
-	$('li').click(function() {
-		$('.in').toggle();
-	});
-});
