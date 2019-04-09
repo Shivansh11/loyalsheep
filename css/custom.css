@@ -364,6 +364,12 @@ fieldset[disabled] .btn-default.active {
     transition: all .35s;
 }
 
+@media (max-width:767px) {
+    .btn-primary {
+        margin-top: 45%;
+    } 
+}
+
 .iOSbtn{
     background-image: url("../images/appstore.png");
 }
@@ -487,6 +493,5 @@ img::-moz-selection {
         width: 1216px;
         margin: 0 auto;
         margin-bottom: 25px;
-    }
-    
+    } 
 }
