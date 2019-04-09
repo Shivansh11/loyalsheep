@@ -141,8 +141,7 @@ nav{
 }
 
 @media (max-width:767px) {
-    .promo-item {
-        
+    .promo-item {    
     margin: 2px auto;
     }  
 }
