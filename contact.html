@@ -71,7 +71,7 @@
             <textarea id="messageInput" placeholder="Your message..." tabindex="3" required maxlength="1000"></textarea>
           </fieldset>
           <fieldset>
-            <button name="submit" id="submitButton" tabindex="4">Submit</button>
+            <button name="submit" id="submitButton" tabindex="4" onclick="this.disabled = true">Send</button>
           </fieldset>
         </form>
       </div>
@@ -146,23 +146,31 @@
     var submitButton = document.getElementById('submitButton');
 
     submitButton.addEventListener('click', function (e) {
-        e.preventDefault();
         var nameString = nameInput.value;
         var emailString = emailInput.value;
         var messageString = messageInput.value;
 
-        console.log(nameString);
+        if((nameString != "" || nameString != null) && (emailString != "" || emailString != null) && (messageString != "" || messageString != null)) {
+            nameInput.value = emailInput.value = messageInput.value = "";
+            submitButton.innerHTML = "Message Sent";
 
-        db.collection("Messages").add({
-        name: nameString,
-        email: emailString,
-        message: messageString
-        }).then(function(docRef) {
-            console.log("Message submitted! :)");
-            }).catch(function(error) {
-                console.error("Error submitting message! :(");
-            });
-        });
+            db.collection("Messages").add({
+            name: nameString,
+            email: emailString,
+            message: messageString
+            }).then(function(docRef) {
+                console.log("Message submitted! :)");
+                setTimeout(TakeMeHome, 3000);
+                }).catch(function(error) {
+                    console.error("Error submitting message! :(");
+                });
+        }
+    });
+
+    function TakeMeHome () {
+        window.location.href = "https://gamenyt.com";
+    }
+        
     </script>
 
 </body>
