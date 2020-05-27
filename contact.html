@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="gamenyt, GameNyt, Shivansh Agrawal, Shivansh, games, videogames, video games, app, apps, android, ios, natives, Bumbari, Tiny Drops, fastest dialler, fastestdialler, Fastest dialler, Fastest Dialler">
+    <meta name="description" content="This is GameNyt, creator of games like Bumbari!">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+    <title>GameNyt - Contact</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <link href="css/contact.css" rel="stylesheet">
+
+    <!-- Custom Fonts from Google -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="siteNav" class="nabar-defavbar navult navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://gamenyt.com">
+                        <img src="images/logo.png" alt="">
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="https://gamenyt.com">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Games</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul> 
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+
+    <!--FORM-->
+    <div class="contactContainer">  
+        <form id="contactForm" action="" method="">
+          <h3>Contact</h3>
+          <fieldset>
+            <input id="nameInput" placeholder="Your full name" type="text" tabindex="1" required autofocus maxlength="50">
+          </fieldset>
+          <fieldset>
+            <input id="emailInput" placeholder="Your email address" type="email" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <textarea id="messageInput" placeholder="Your message..." tabindex="3" required maxlength="1000"></textarea>
+          </fieldset>
+          <fieldset>
+            <button name="submit" id="submitButton" tabindex="4">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+
+    <!--END OF FORM-->
+	<!-- Footer -->
+    <footer class="page-footer">
+        <!-- Copyright etc -->
+        <div class="small-print">
+        	<div class="container">
+                <p class="PS"><b><i>Never miss a thing..!</i></b></p>
+                <a href="https://www.youtube.com/channel/UCie230PyK4Ts6JaVHsAfFYw" target="_blank">
+                    <img src="images/youtube.png" class="footIcon">
+                </a>
+                <a href="https://facebook.com/loyalsheep" target="_blank">
+                    <img src="images/facebook.png" class="fbIcon footIcon">
+                </a>
+                <a href="https://twitter.com/iLoyalsheep" target="_blank">
+                    <img src="images/twitter.png" class="footIcon">
+                </a>
+                <a href="https://discord.gg/rqPdWFa" target="_blank">
+                    <img src="images/discord.png" class="discordIcon footIcon">
+                </a>
+        	</div>
+        </div>
+        
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBRHZPqZSoYd7GRQGiPOleJAoC2IhATJew",
+        authDomain: "website-5a5d9.firebaseapp.com",
+        databaseURL: "https://website-5a5d9.firebaseio.com",
+        projectId: "website-5a5d9",
+        storageBucket: "website-5a5d9.appspot.com",
+        messagingSenderId: "730021465207",
+        appId: "1:730021465207:web:17211efa4404c08ea0ca72",
+        measurementId: "G-TPBLNXG0T9"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    /*const firebase = require("firebase");
+    // Required for side-effects
+    require("firebase/firestore");*/
+    
+    var db = firebase.firestore();
+
+    var nameInput = document.getElementById('nameInput');
+    var emailInput = document.getElementById('emailInput');
+    var messageInput = document.getElementById('messageInput');
+    var submitButton = document.getElementById('submitButton');
+
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        var nameString = nameInput.value;
+        var emailString = emailInput.value;
+        var messageString = messageInput.value;
+
+        console.log(nameString);
+
+        db.collection("Messages").add({
+        name: nameString,
+        email: emailString,
+        message: messageString
+        }).then(function(docRef) {
+            console.log("Message submitted! :)");
+            }).catch(function(error) {
+                console.error("Error submitting message! :(");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
