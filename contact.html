@@ -157,7 +157,8 @@
             db.collection("Messages").add({
             name: nameString,
             email: emailString,
-            message: messageString
+            message: messageString,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
             }).then(function(docRef) {
                 console.log("Message submitted! :)");
                 setTimeout(TakeMeHome, 3000);
